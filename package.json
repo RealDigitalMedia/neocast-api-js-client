@@ -1,0 +1,12 @@
+{
+  "name": "neocast-api-js-client",
+  "version": "1.0.0",
+  "description": "NEOCAST API JavaScript Client",
+  "main": "index.js",
+  "author": "RDM <info@realdigitalmedia.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "spraypaint": "^0.10.4"
+  }
+}
