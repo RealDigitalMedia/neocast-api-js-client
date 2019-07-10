@@ -104,6 +104,7 @@ const Media = ApplicationRecord.extend({
   attrs: {
     tags: hasMany(),
     subtitles: hasMany(),
+    customFieldValues: hasMany(),
 
     allPresentations: attr({ persist: false }),
     aspect: attr(),
@@ -274,10 +275,30 @@ const Subtitle = ApplicationRecord.extend({
   },
   attrs: {
     media: belongsTo(),
-    mediaId: attr(),
     dialect: belongsTo(),
-    dialectId: attr(),
     data: attr(),
+  },
+})
+
+const CustomField = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'custom_fields',
+  },
+  attrs: {
+    name: attr(),
+    model: attr(),
+  },
+})
+
+const CustomFieldValue = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'custom_field_values',
+  },
+  attrs: {
+    customField: belongsTo(),
+    modelId: attr(),
+    modelType: attr(),
+    value: attr(),
   },
 })
 
@@ -292,7 +313,7 @@ const loginWithJWT = async (url, username, password) => {
   const response = await fetch(`${url}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ user })
+    body: JSON.stringify({ user }),
   })
 
   if (response.status === 200) {
@@ -307,6 +328,8 @@ const loginWithJWT = async (url, username, password) => {
 module.exports = {
   CurrentUser,
   ApplicationRecord,
+  CustomField,
+  CustomFieldValue,
   Subtitle,
   Dialect,
   GroupCategory,
@@ -320,5 +343,5 @@ module.exports = {
   Player,
   Preference,
   Media,
-  loginWithJWT
+  loginWithJWT,
 }
