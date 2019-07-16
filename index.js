@@ -97,6 +97,23 @@ const Player = ApplicationRecord.extend({
   },
 })
 
+const SpotSwapItem = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'media',
+  },
+  attrs: {
+    media: belongsTo(),
+    file_name: attr(),
+    cached_file_size: attr(),
+    md5: attr(),
+    start_date: attr(),
+    end_date: attr(),
+    original_file_name: attr(),
+    description: attr(),
+    cached_md5sum: attr(),
+  },
+})
+
 const Media = ApplicationRecord.extend({
   static: {
     jsonapiType: 'media',
@@ -105,6 +122,7 @@ const Media = ApplicationRecord.extend({
     tags: hasMany(),
     subtitles: hasMany(),
     customFieldValues: hasMany(),
+    spotSwapItems: hasMany(),
 
     allPresentations: attr({ persist: false }),
     aspect: attr(),
@@ -343,5 +361,6 @@ module.exports = {
   Player,
   Preference,
   Media,
+  SpotSwapItem,
   loginWithJWT,
 }
