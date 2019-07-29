@@ -291,6 +291,17 @@ const Dialect = ApplicationRecord.extend({
   },
 })
 
+const Font = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'fonts',
+  },
+  attrs: {
+    name: attr(),
+    fileName: attr(),
+    webuiDisplayName: attr(),
+  },
+})
+
 const Subtitle = ApplicationRecord.extend({
   static: {
     jsonapiType: 'subtitles',
@@ -354,6 +365,7 @@ module.exports = {
   CustomFieldValue,
   Subtitle,
   Dialect,
+  Font,
   GroupCategory,
   PlayerGroup,
   MediaGroup,
