@@ -118,6 +118,18 @@ const SpotSwapItem = ApplicationRecord.extend({
   },
 })
 
+const FeedItem = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'feed_items',
+  },
+  attrs: {
+    media: belongsTo(),
+    title: attr(),
+    description: attr(),
+    position: attr(),
+  }
+})
+
 const Media = ApplicationRecord.extend({
   static: {
     jsonapiType: 'media',
@@ -125,6 +137,7 @@ const Media = ApplicationRecord.extend({
   attrs: {
     tags: hasMany(),
     subtitles: hasMany(),
+    feedItems: hasMany(),
     customFieldValues: hasMany(),
     spotSwapItems: hasMany(),
 
@@ -366,6 +379,7 @@ module.exports = {
   Subtitle,
   Dialect,
   Font,
+  FeedItem,
   GroupCategory,
   PlayerGroup,
   MediaGroup,
