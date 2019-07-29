@@ -99,18 +99,22 @@ const Player = ApplicationRecord.extend({
 
 const SpotSwapItem = ApplicationRecord.extend({
   static: {
-    jsonapiType: 'media',
+    jsonapiType: 'spot_swap_items',
   },
   attrs: {
     media: belongsTo(),
-    file_name: attr(),
-    cached_file_size: attr(),
+    fileName: attr(),
+    cachedFileSize: attr(),
     md5: attr(),
-    start_date: attr(),
-    end_date: attr(),
-    original_file_name: attr(),
+    startDate: attr(),
+    endDate: attr(),
+    originalFileName: attr(),
     description: attr(),
-    cached_md5sum: attr(),
+    cachedMd5sum: attr(),
+    downloadUrl: attr(),
+    distributableType: attr(),
+    distributableId: attr(),
+    distributableDescription: attr(),
   },
 })
 
@@ -185,7 +189,7 @@ const Media = ApplicationRecord.extend({
     playableAt: attr(),
     previewUrl: attr(),
     refreshRate: attr(),
-    remote_url: attr(),
+    remoteUrl: attr(),
     rssIconFileName: attr(),
     runTime: attr(),
     runTimeMs: attr(),
