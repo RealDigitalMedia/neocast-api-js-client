@@ -141,6 +141,7 @@ const Media = ApplicationRecord.extend({
     customFieldValues: hasMany(),
     spotSwapItems: hasMany(),
 
+    mediaLink: belongsTo('media'),
     feedBackgroundImage: belongsTo('media'),
     feedBackgroundImageId: attr(),
 
