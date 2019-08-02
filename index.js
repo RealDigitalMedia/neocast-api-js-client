@@ -127,7 +127,7 @@ const FeedItem = ApplicationRecord.extend({
     title: attr(),
     description: attr(),
     position: attr(),
-  }
+  },
 })
 
 const Media = ApplicationRecord.extend({
@@ -255,12 +255,27 @@ const SmartGroup = ApplicationRecord.extend({
     jsonapiType: 'smart_groups',
   },
   attrs: {
+    smartGroupConditions: hasMany(),
+
     name: attr(),
     type: attr(),
     targetClass: attr(),
     groupCategory: belongsTo(),
     groupCategoryId: attr(),
     members: attr({ persist: false }),
+  },
+})
+
+const SmartGroupCondition = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'smart_group_conditions',
+  },
+  attrs: {
+    comparitor: attr(),
+    value: attr(),
+    column: attr(),
+    smartGroupId: attr(),
+    smartGroup: belongsTo(),
   },
 })
 
@@ -388,6 +403,7 @@ module.exports = {
   PlayerGroup,
   MediaGroup,
   SmartGroup,
+  SmartGroupCondition,
   Tag,
   TagGroup,
   Network,
