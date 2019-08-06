@@ -259,6 +259,9 @@ const SmartGroup = ApplicationRecord.extend({
 
     name: attr(),
     type: attr(),
+    joinType: attr(),
+    useInPresentationContentLibrary: attr(),
+    playbackStyle: attr(),
     targetClass: attr(),
     groupCategory: belongsTo(),
     groupCategoryId: attr(),
