@@ -28,6 +28,8 @@ const Network = ApplicationRecord.extend({
     name: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -41,6 +43,8 @@ const Location = ApplicationRecord.extend({
     name: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -63,6 +67,8 @@ const CurrentUser = ApplicationRecord.extend({
     lastSignInIp: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -105,6 +111,8 @@ const Player = ApplicationRecord.extend({
     clockDelta: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -129,6 +137,8 @@ const SpotSwapItem = ApplicationRecord.extend({
     distributableDescription: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -144,6 +154,8 @@ const FeedItem = ApplicationRecord.extend({
     position: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -172,8 +184,6 @@ const Media = ApplicationRecord.extend({
     cachedMd5sum: attr(),
     cachingFrequency: attr(),
     colorspace: attr(),
-    createdAt: attr(),
-    createdBy: attr(),
     custom: attr(),
     customerId: attr(),
     deletedAt: attr(),
@@ -245,6 +255,8 @@ const Media = ApplicationRecord.extend({
     width: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -257,6 +269,8 @@ const TagGroup = ApplicationRecord.extend({
     tags: hasMany(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -271,6 +285,8 @@ const Tag = ApplicationRecord.extend({
     tagGroupId: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -292,6 +308,8 @@ const SmartGroup = ApplicationRecord.extend({
     members: attr({ persist: false }),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -318,6 +336,8 @@ const MediaGroup = ApplicationRecord.extend({
     members: attr({ persist: false }),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -333,6 +353,8 @@ const PlayerGroup = ApplicationRecord.extend({
     members: attr({ persist: false }),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
@@ -381,6 +403,8 @@ const Subtitle = ApplicationRecord.extend({
     data: attr(),
     createdAt: attr(),
     updatedAt: attr(),
+    createdByName: attr(),
+    updatedByName: attr(),
   },
 })
 
