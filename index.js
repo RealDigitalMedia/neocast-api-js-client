@@ -22,9 +22,12 @@ const Network = ApplicationRecord.extend({
     jsonapiType: 'networks',
   },
   attrs: {
-    name: attr(),
     locations: hasMany(),
     players: hasMany(),
+
+    name: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -33,8 +36,11 @@ const Location = ApplicationRecord.extend({
     jsonapiType: 'locations',
   },
   attrs: {
-    name: attr(),
     network: belongsTo(),
+
+    name: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -44,6 +50,8 @@ const CurrentUser = ApplicationRecord.extend({
   },
 
   attrs: {
+    preference: hasOne(),
+
     login: attr(),
     email: attr(),
     name: attr(),
@@ -53,7 +61,8 @@ const CurrentUser = ApplicationRecord.extend({
     lastSignInAt: attr(),
     currentSignInIp: attr(),
     lastSignInIp: attr(),
-    preference: hasOne(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -94,6 +103,8 @@ const Player = ApplicationRecord.extend({
     city: attr(),
     clientAddressableHostname: attr(),
     clockDelta: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -103,6 +114,7 @@ const SpotSwapItem = ApplicationRecord.extend({
   },
   attrs: {
     media: belongsTo(),
+
     fileName: attr(),
     cachedFileSize: attr(),
     md5: attr(),
@@ -115,6 +127,8 @@ const SpotSwapItem = ApplicationRecord.extend({
     distributableType: attr(),
     distributableId: attr(),
     distributableDescription: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -124,9 +138,12 @@ const FeedItem = ApplicationRecord.extend({
   },
   attrs: {
     media: belongsTo(),
+
     title: attr(),
     description: attr(),
     position: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -226,6 +243,8 @@ const Media = ApplicationRecord.extend({
     volume: attr(),
     webContentControlsDuration: attr(),
     width: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -236,6 +255,8 @@ const TagGroup = ApplicationRecord.extend({
   attrs: {
     name: attr(),
     tags: hasMany(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -244,9 +265,12 @@ const Tag = ApplicationRecord.extend({
     jsonapiType: 'tags',
   },
   attrs: {
+    tagGroup: belongsTo(),
+
     name: attr(),
     tagGroupId: attr(),
-    tagGroup: belongsTo(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -256,6 +280,8 @@ const SmartGroup = ApplicationRecord.extend({
   },
   attrs: {
     smartGroupConditions: hasMany(),
+    groupCategory: belongsTo(),
+    groupCategoryId: attr(),
 
     name: attr(),
     type: attr(),
@@ -263,9 +289,9 @@ const SmartGroup = ApplicationRecord.extend({
     useInPresentationContentLibrary: attr(),
     playbackStyle: attr(),
     targetClass: attr(),
-    groupCategory: belongsTo(),
-    groupCategoryId: attr(),
     members: attr({ persist: false }),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -274,11 +300,12 @@ const SmartGroupCondition = ApplicationRecord.extend({
     jsonapiType: 'smart_group_conditions',
   },
   attrs: {
+    smartGroup: belongsTo(),
+    smartGroupId: attr(),
+
     comparitor: attr(),
     value: attr(),
     column: attr(),
-    smartGroupId: attr(),
-    smartGroup: belongsTo(),
   },
 })
 
@@ -289,6 +316,8 @@ const MediaGroup = ApplicationRecord.extend({
   attrs: {
     name: attr(),
     members: attr({ persist: false }),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -297,10 +326,13 @@ const PlayerGroup = ApplicationRecord.extend({
     jsonapiType: 'player_groups',
   },
   attrs: {
-    name: attr(),
-    members: attr({ persist: false }),
     groupCategory: belongsTo(),
     groupCategoryId: attr(),
+
+    name: attr(),
+    members: attr({ persist: false }),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -321,6 +353,7 @@ const Dialect = ApplicationRecord.extend({
   },
   attrs: {
     subtitles: hasMany(),
+
     code: attr(),
     name: attr(),
   },
@@ -344,7 +377,10 @@ const Subtitle = ApplicationRecord.extend({
   attrs: {
     media: belongsTo(),
     dialect: belongsTo(),
+
     data: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
   },
 })
 
@@ -364,6 +400,7 @@ const CustomFieldValue = ApplicationRecord.extend({
   },
   attrs: {
     customField: belongsTo(),
+
     modelId: attr(),
     modelType: attr(),
     value: attr(),
