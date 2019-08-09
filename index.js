@@ -332,16 +332,30 @@ const MediaGroup = ApplicationRecord.extend({
     jsonapiType: 'media_groups',
   },
   attrs: {
+    mediaGroupItems: hasMany(),
+
     name: attr(),
     playbackStyle: attr(),
     isLocked: attr(),
-    members: attr({ persist: false }),
     createdAt: attr(),
     updatedAt: attr(),
     createdByName: attr(),
     updatedByName: attr(),
   },
 })
+
+const MediaGroupItem = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'media_group_items',
+  },
+  attrs: {
+    media: belongsTo(),
+    mediaGroup: belongsTo(),
+
+    position: attr(),
+  },
+})
+
 
 const PlayerGroup = ApplicationRecord.extend({
   static: {
