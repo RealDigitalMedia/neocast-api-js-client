@@ -333,6 +333,8 @@ const MediaGroup = ApplicationRecord.extend({
   },
   attrs: {
     name: attr(),
+    playbackStyle: attr(),
+    isLocked: attr(),
     members: attr({ persist: false }),
     createdAt: attr(),
     updatedAt: attr(),
