@@ -350,6 +350,7 @@ const MediaGroupItem = ApplicationRecord.extend({
   },
   attrs: {
     media: belongsTo(),
+    mediaId: attr(),
     mediaGroup: belongsTo(),
 
     position: attr(),
