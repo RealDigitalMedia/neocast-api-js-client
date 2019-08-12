@@ -290,6 +290,18 @@ const Tag = ApplicationRecord.extend({
   },
 })
 
+const Tagging = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'tags',
+  },
+  attrs: {
+    tag: belongsTo(),
+    tagId: attr(),
+    taggableId: attr(),
+    taggableType: attr(),
+  }
+})
+
 const SmartGroup = ApplicationRecord.extend({
   static: {
     jsonapiType: 'smart_groups',
@@ -488,6 +500,7 @@ module.exports = {
   SmartGroupCondition,
   Tag,
   TagGroup,
+  Tagging,
   Network,
   Location,
   Player,
