@@ -482,6 +482,7 @@ module.exports = {
   GroupCategory,
   PlayerGroup,
   MediaGroup,
+  MediaGroupItem,
   SmartGroup,
   SmartGroupCondition,
   Tag,
