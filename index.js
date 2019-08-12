@@ -292,7 +292,7 @@ const Tag = ApplicationRecord.extend({
 
 const Tagging = ApplicationRecord.extend({
   static: {
-    jsonapiType: 'tags',
+    jsonapiType: 'taggings',
   },
   attrs: {
     tag: belongsTo(),
