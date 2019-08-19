@@ -335,6 +335,21 @@ const SmartGroup = ApplicationRecord.extend({
     createdByName: attr(),
     updatedByName: attr(),
   },
+
+  methods: {
+    // Returns a new smart group id, or false if unable to duplicate
+    duplicate: async function() {
+      const newSmartGroup = new DuplicateSmartGroup()
+      newSmartGroup.mediaGroupId = this.id
+
+      const success = await newSmartGroup.save()
+      if (success) {
+        return newSmartGroup.smartGroupId
+      } else {
+        return false
+      }
+    },
+  },
 })
 
 const SmartGroupCondition = ApplicationRecord.extend({
