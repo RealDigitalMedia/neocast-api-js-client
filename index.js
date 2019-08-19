@@ -507,6 +507,7 @@ module.exports = {
   PlayerGroup,
   MediaGroup,
   MediaGroupItem,
+  DuplicateMediaGroup,
   SmartGroup,
   SmartGroupCondition,
   Tag,
