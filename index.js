@@ -224,6 +224,7 @@ const Media = ApplicationRecord.extend({
     localFeed: attr(),
     logable: attr(),
     mediaLinkId: attr(),
+    mediaUrl: attr(),
     name: attr(),
     needsPreviewGenerated: attr(),
     needsThumbnailGenerated: attr(),
