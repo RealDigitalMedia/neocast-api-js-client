@@ -302,6 +302,18 @@ const Tagging = ApplicationRecord.extend({
   }
 })
 
+const DuplicateSmartGroup = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'duplicate_smart_groups',
+  },
+
+  attrs: {
+    smartGroup: belongsTo(),
+    smartGroupId: attr(),
+  }
+})
+
+
 const SmartGroup = ApplicationRecord.extend({
   static: {
     jsonapiType: 'smart_groups',
@@ -524,6 +536,7 @@ module.exports = {
   MediaGroup,
   MediaGroupItem,
   DuplicateMediaGroup,
+  DuplicateSmartGroup,
   SmartGroup,
   SmartGroupCondition,
   Tag,
