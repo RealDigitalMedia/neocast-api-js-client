@@ -346,6 +346,7 @@ const DuplicateMediaGroup = ApplicationRecord.extend({
 
   attrs: {
     mediaGroup: belongsTo(),
+    mediaGroupId: attr(),
   }
 })
 
