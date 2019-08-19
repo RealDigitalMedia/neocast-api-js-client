@@ -159,6 +159,16 @@ const FeedItem = ApplicationRecord.extend({
   },
 })
 
+const Duplicate = ApplciationRecord.extend({
+  static: {
+    jsonapiType: 'duplicate',
+  },
+
+  attrs: {
+    media: belongsTo(),
+  }
+}
+
 const Media = ApplicationRecord.extend({
   static: {
     jsonapiType: 'media',
@@ -169,6 +179,7 @@ const Media = ApplicationRecord.extend({
     feedItems: hasMany(),
     customFieldValues: hasMany(),
     spotSwapItems: hasMany(),
+    duplicates: hasMany(),
 
     mediaLink: belongsTo('media'),
     feedBackgroundImage: belongsTo('media'),
