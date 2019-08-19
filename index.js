@@ -366,6 +366,23 @@ const MediaGroup = ApplicationRecord.extend({
     createdByName: attr(),
     updatedByName: attr(),
   },
+
+  methods: {
+    // Returns a new media group id, or false if unable to duplicate
+    duplicate: () => {
+      const newMediaGroup = new DuplicateMediaGroup()
+      newMediaGroup.mediaGroupId = this.id
+
+      newMediaGroup.save().then(success => {
+        if (success) {
+          return this.id
+        }
+        else {
+          return false
+        }
+      })
+    }
+  },
 })
 
 const MediaGroupItem = ApplicationRecord.extend({
