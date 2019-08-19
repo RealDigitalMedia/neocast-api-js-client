@@ -375,7 +375,7 @@ const MediaGroup = ApplicationRecord.extend({
 
       const success = await newMediaGroup.save()
       if (success) {
-        return this.id
+        return newMediaGroup.mediaGroupId
       } else {
         return false
       }
