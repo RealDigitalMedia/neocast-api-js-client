@@ -339,7 +339,7 @@ const SmartGroupCondition = ApplicationRecord.extend({
   },
 })
 
-const DuplicateMediaGroup = ApplciationRecord.extend({
+const DuplicateMediaGroup = ApplicationRecord.extend({
   static: {
     jsonapiType: 'duplicate_media_groups',
   },
