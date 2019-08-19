@@ -159,16 +159,6 @@ const FeedItem = ApplicationRecord.extend({
   },
 })
 
-const Duplicate = ApplciationRecord.extend({
-  static: {
-    jsonapiType: 'duplicate',
-  },
-
-  attrs: {
-    media: belongsTo(),
-  }
-}
-
 const Media = ApplicationRecord.extend({
   static: {
     jsonapiType: 'media',
@@ -179,7 +169,6 @@ const Media = ApplicationRecord.extend({
     feedItems: hasMany(),
     customFieldValues: hasMany(),
     spotSwapItems: hasMany(),
-    duplicates: hasMany(),
 
     mediaLink: belongsTo('media'),
     feedBackgroundImage: belongsTo('media'),
@@ -350,12 +339,23 @@ const SmartGroupCondition = ApplicationRecord.extend({
   },
 })
 
+const DuplicateMediaGroup = ApplciationRecord.extend({
+  static: {
+    jsonapiType: 'duplicate_media_groups',
+  },
+
+  attrs: {
+    mediaGroup: belongsTo(),
+  }
+}
+
 const MediaGroup = ApplicationRecord.extend({
   static: {
     jsonapiType: 'media_groups',
   },
   attrs: {
     mediaGroupItems: hasMany(),
+    duplicateMediaGroups: hasMany(),
 
     name: attr(),
     playbackStyle: attr(),
