@@ -107,7 +107,7 @@ const Player = ApplicationRecord.extend({
     displayCommunicationHasErrors: attr(),
     displayCommunicationHasReads: attr(),
     displayCommunicationHasWrites: attr(),
-    displayConfiguration: attr(),
+    displayConfigurationObject: attr(),
     displayControlFrequency: attr(),
     displayModel: attr(),
     displayOrientation: attr(),
