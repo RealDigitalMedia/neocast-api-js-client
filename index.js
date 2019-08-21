@@ -17,6 +17,22 @@ const ApplicationRecord = SpraypaintBase.extend({
   },
 })
 
+
+const DisplayConfiguration = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'display_configurations',
+  },
+
+  attrs: {
+    name: attr(),
+    screenResolutionX: attr(),
+    screenResolutionY: attr(),
+    screenArrayX: attr(),
+    screenArrayY: attr(),
+    orientation: attr(),
+  }
+})
+
 const Network = ApplicationRecord.extend({
   static: {
     jsonapiType: 'networks',
@@ -633,28 +649,30 @@ const loginWithJWT = async (url, username, password) => {
 module.exports = {
   CurrentUser,
   ApplicationRecord,
+  loginWithJWT,
+
   CustomField,
   CustomFieldValue,
-  Subtitle,
   Dialect,
-  Font,
-  FeedItem,
-  GroupCategory,
-  PlayerGroup,
-  MediaGroup,
-  MediaGroupItem,
+  DisplayConfiguration,
   DuplicateMediaGroup,
   DuplicateSmartGroup,
+  FeedItem,
+  Font,
+  GroupCategory,
+  Location,
+  Media,
+  MediaGroup,
+  MediaGroupItem,
+  Network,
+  Player,
+  PlayerGroup,
+  Preference,
   SmartGroup,
   SmartGroupCondition,
+  SpotSwapItem,
+  Subtitle,
   Tag,
   TagGroup,
   Tagging,
-  Network,
-  Location,
-  Player,
-  Preference,
-  Media,
-  SpotSwapItem,
-  loginWithJWT,
 }
