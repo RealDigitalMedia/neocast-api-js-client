@@ -64,6 +64,22 @@ const Location = ApplicationRecord.extend({
   },
 })
 
+const PlayerDistribution = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'player_distributions',
+  },
+  attrs: {
+    network: hasMany(),
+    locations: hasMany(),
+    players: hasMany(),
+    playerGroups: hasMany(),
+    smartGroups: hasMany(),
+
+    playerCount: attr(),
+  },
+})
+
+
 const CurrentUser = ApplicationRecord.extend({
   static: {
     jsonapiType: 'current_users',
@@ -666,6 +682,7 @@ module.exports = {
   MediaGroupItem,
   Network,
   Player,
+  PlayerDistribution,
   PlayerGroup,
   Preference,
   SmartGroup,
