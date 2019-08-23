@@ -556,6 +556,7 @@ const PlayerGroup = ApplicationRecord.extend({
   attrs: {
     groupCategory: belongsTo(),
     groupCategoryId: attr(),
+    playerDistribution: belongsTo(),
 
     name: attr(),
     members: attr({ persist: false }),
