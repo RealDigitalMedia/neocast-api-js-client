@@ -69,7 +69,7 @@ const PlayerDistribution = ApplicationRecord.extend({
     jsonapiType: 'player_distributions',
   },
   attrs: {
-    network: hasMany(),
+    networks: hasMany(),
     locations: hasMany(),
     players: hasMany(),
     playerGroups: hasMany(),
