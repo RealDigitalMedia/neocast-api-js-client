@@ -315,6 +315,7 @@ const Media = ApplicationRecord.extend({
     displaySpeed: attr(),
     displayStyle: attr(),
     duration: attr(),
+    expired: attr(),
     feedBackgroundColor: attr(),
     feedBackgroundImageId: attr(),
     feedFontId: attr(),
