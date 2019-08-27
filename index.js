@@ -299,7 +299,7 @@ const Media = ApplicationRecord.extend({
     feedBackgroundImageId: attr(),
 
     allPresentations: attr({ persist: false }),
-    aspect: attr(),
+    aspectRatio: attr(),
     audioCodec: attr(),
     audioEncodeRateKilobitsPerSecond: attr(),
     audioSampleRateKilobitsPerSecond: attr(),
