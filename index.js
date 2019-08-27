@@ -373,6 +373,7 @@ const Media = ApplicationRecord.extend({
     updatedAt: attr(),
     updatedBy: attr(),
     updatedByName: attr(),
+    used: attr(),
     videoCodec: attr(),
     videoEncodeRateMegabitsPerSecond: attr(),
     videoFramesPerSecond: attr(),
