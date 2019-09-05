@@ -509,6 +509,9 @@ const MediaGroup = ApplicationRecord.extend({
     jsonapiType: 'media_groups',
   },
   attrs: {
+    groupCategory: belongsTo(),
+    groupCategoryId: attr(),
+
     mediaGroupItems: hasMany(),
     duplicateMediaGroups: hasMany(),
 
