@@ -63,9 +63,9 @@ node-fetch@^1.0.1:
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
 spraypaint@^0.10.4:
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/spraypaint/-/spraypaint-0.10.4.tgz#77755c8e6b145e9c9a24519db1a3f3c5b5b5f37f"
-  integrity sha512-uj0+nYKJ3ki2aPDG02WPWjlczdq3cOij1rNdccxEeMQ42ql5Btz7XakWZAdtnpE6D5CgdVaKu+fWuXD/m0dgwQ==
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/spraypaint/-/spraypaint-0.10.6.tgz#09a47d9bed154b9d9673530d79f8db64e3d04398"
+  integrity sha512-paaiKam7f9QST9L5Y/vJ1Uka3eLowOay8gpfA6ZNxwCbLfW86FCZDzNErQ/LZga16vm2heBzz2CTbuM8j1Aufg==
   dependencies:
     eventbusjs "^0.2.0"
     inflected "^2.0.3"
