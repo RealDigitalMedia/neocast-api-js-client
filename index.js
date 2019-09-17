@@ -659,7 +659,7 @@ const VideoOutput = ApplicationRecord.extend({
   },
   attrs: {
     player: belongsTo(),
-    videoOutputResolution: hasMany(),
+    videoOutputResolutions: hasMany(),
 
     name: attr(),
     width: attr(),
