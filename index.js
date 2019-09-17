@@ -140,6 +140,7 @@ const Player = ApplicationRecord.extend({
     displayCommunicationHasReads: attr(),
     displayCommunicationHasWrites: attr(),
     displayConfigurationObject: attr(),
+    displayConfigurationId: attr(),
     displayControlFrequency: attr(),
     displayModel: attr(),
     displayOrientation: attr(),
@@ -245,6 +246,7 @@ const Player = ApplicationRecord.extend({
     watchdogIntervalSeconds: attr(),
 
     videoOutputs: hasMany(),
+    displayConfiguration: belongsTo(),
   }
 })
 
