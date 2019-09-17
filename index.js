@@ -651,6 +651,44 @@ const CustomFieldValue = ApplicationRecord.extend({
   },
 })
 
+const VideoOutput = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'video_outputs',
+  },
+  attrs: {
+    player: belongsTo(),
+    videoOutputResolution: hasMany(),
+
+    name: attr(),
+    width: attr(),
+    height: attr(),
+    xpos: attr(),
+    ypos: attr(),
+    display_order: attr(),
+    enabled: attr(),
+    connected: attr(),
+    createdAt attr(),
+    updatedAt: attr(),
+  },
+}
+
+const VideoOutputResolution = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'video_output_resolutions',
+  },
+  attrs: {
+    videoOutput: belongsTo(),
+
+    width: attr(),
+    height: attr(),
+    refresh: attr(),
+    active: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
+  },
+}
+
+
 const loginWithJWT = async (url, username, password) => {
   ApplicationRecord.baseUrl = url
 
@@ -704,4 +742,6 @@ module.exports = {
   Tag,
   TagGroup,
   Tagging,
+  VideoOutput,
+  VideoOutputResolution,
 }
