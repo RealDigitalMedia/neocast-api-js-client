@@ -666,7 +666,7 @@ const VideoOutput = ApplicationRecord.extend({
     height: attr(),
     xpos: attr(),
     ypos: attr(),
-    display_order: attr(),
+    displayOrder: attr(),
     enabled: attr(),
     connected: attr(),
     createdAt: attr(),
