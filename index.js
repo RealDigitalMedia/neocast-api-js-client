@@ -714,7 +714,7 @@ const DisplayDriver = ApplicationRecord.extend({
 
 const DisplayModelVendor = ApplicationRecord.extend({
   static: {
-    jsonapiType: 'display_model_vendor',
+    jsonapiType: 'display_model_vendors',
   },
   attrs: {
     name: attr(),
