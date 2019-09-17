@@ -676,6 +676,55 @@ const VideoOutput = ApplicationRecord.extend({
   },
 })
 
+const DisplayModel = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'display_models',
+  },
+  attrs: {
+    name: attr(),
+    displayDriver: belongsTo(),
+    displayModelSources: hasMany(),
+  }
+})
+
+const DisplayModelSource = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'display_model_sources',
+  },
+  attrs: {
+    name: attr(),
+    modelSpecificValue: attr(),
+    displayDriver: belongsTo(),
+    displayModel: belongsTo()
+  }
+})
+
+
+const DisplayDriver = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'display_drivers',
+  },
+  attrs: {
+    name: attr(),
+    volumeLow: attr(),
+    volumeHigh: attr(),
+    displayModelVendor: belongsTo()
+  }
+})
+
+const DisplayModelVendor = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'display_model_vendor',
+  },
+  attrs: {
+    name: attr(),
+    displayDrivers: hasMany()
+  }
+})
+
+
+
+
 const VideoOutputResolution = ApplicationRecord.extend({
   static: {
     jsonapiType: 'video_output_resolutions',
@@ -725,6 +774,10 @@ module.exports = {
   CustomFieldValue,
   Dialect,
   DisplayConfiguration,
+  DisplayDriver,
+  DisplayModel,
+  DisplayModelSource,
+  DisplayModelVendor,
   DuplicateMediaGroup,
   DuplicateSmartGroup,
   FeedItem,
