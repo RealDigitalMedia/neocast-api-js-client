@@ -718,7 +718,8 @@ const DisplayModelVendor = ApplicationRecord.extend({
   },
   attrs: {
     name: attr(),
-    displayDrivers: hasMany()
+    displayDrivers: hasMany(),
+    displayModels: hasMany(),
   }
 })
 
