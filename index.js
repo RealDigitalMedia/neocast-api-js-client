@@ -243,6 +243,8 @@ const Player = ApplicationRecord.extend({
     uptime: attr(),
     videoOutputMode: attr(),
     watchdogIntervalSeconds: attr(),
+
+    videoOutputs: hasMany(),
   }
 })
 
