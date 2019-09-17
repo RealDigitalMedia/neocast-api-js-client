@@ -683,6 +683,7 @@ const DisplayModel = ApplicationRecord.extend({
   attrs: {
     name: attr(),
     displayDriver: belongsTo(),
+    displayModelVendor: belongsTo(),
     displayModelSources: hasMany(),
   }
 })
@@ -708,7 +709,9 @@ const DisplayDriver = ApplicationRecord.extend({
     name: attr(),
     volumeLow: attr(),
     volumeHigh: attr(),
-    displayModelVendor: belongsTo()
+    displayModelVendor: belongsTo(),
+    displayModelSources: hasMany(),
+    displayModels: hasMany(),
   }
 })
 
