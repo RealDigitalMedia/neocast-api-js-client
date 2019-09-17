@@ -667,10 +667,10 @@ const VideoOutput = ApplicationRecord.extend({
     display_order: attr(),
     enabled: attr(),
     connected: attr(),
-    createdAt attr(),
+    createdAt: attr(),
     updatedAt: attr(),
   },
-}
+})
 
 const VideoOutputResolution = ApplicationRecord.extend({
   static: {
@@ -686,7 +686,7 @@ const VideoOutputResolution = ApplicationRecord.extend({
     createdAt: attr(),
     updatedAt: attr(),
   },
-}
+})
 
 
 const loginWithJWT = async (url, username, password) => {
