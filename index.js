@@ -251,7 +251,28 @@ const Player = ApplicationRecord.extend({
     videoOutputs: hasMany(),
     displayConfiguration: belongsTo(),
     directoryFiles: hasMany(),
+    assignedFiles: hasMany(),
   }
+})
+
+const AssignedFile = ApplicationRecord.extend({
+  directoryId: attr(),
+  deviceId: attr(),
+  onDeviceName: attr(),
+  length: attr(),
+  checksumType: attr(),
+  checksumValue: attr(),
+  deliveryMechanismId: attr(),
+  awaitingDownload: attr(),
+  deviceType: attr(),
+  downloadableType: attr(),
+  downloadableId: attr(),
+  earliestNeedByDate: attr(),
+  updatedAt: attr(),
+  createdAt: attr(),
+  category: attr(),
+  explicitUrl: attr(),
+  failedDownloadAttempts: attr(),
 })
 
 const DirectoryFile = ApplicationRecord.extend({
@@ -792,6 +813,7 @@ module.exports = {
   ApplicationRecord,
   loginWithJWT,
 
+  AssignedFile,
   CustomField,
   CustomFieldValue,
   Dialect,
