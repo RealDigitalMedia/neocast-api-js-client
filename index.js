@@ -250,6 +250,22 @@ const Player = ApplicationRecord.extend({
 
     videoOutputs: hasMany(),
     displayConfiguration: belongsTo(),
+    directoryFiles: hasMany(),
+  }
+})
+
+const DirectoryFile = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'directory_files',
+  },
+  attrs: {
+    directoryId: attr(),
+    deviceId: attr(),
+    name: attr(),
+    length: attr(),
+    md5Sum: attr(),
+    lastAssignedDate: attr(),
+    raw: attr(),
   }
 })
 
@@ -779,6 +795,7 @@ module.exports = {
   CustomField,
   CustomFieldValue,
   Dialect,
+  DirectoryFile,
   DisplayConfiguration,
   DisplayDriver,
   DisplayModel,
