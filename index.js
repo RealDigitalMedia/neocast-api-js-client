@@ -256,6 +256,9 @@ const Player = ApplicationRecord.extend({
 })
 
 const AssignedFile = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'assigned_files',
+  },
   directoryId: attr(),
   deviceId: attr(),
   onDeviceName: attr(),
