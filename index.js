@@ -121,6 +121,8 @@ const Player = ApplicationRecord.extend({
     jsonapiType: 'players',
   },
   attrs: {
+    allPresentations: attr({ persist: false }),
+
     activeInterfaceHumanReadable: attr(),
     addressStreetLine1: attr(),
     addressStreetLine2: attr(),
