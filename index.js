@@ -131,6 +131,7 @@ const Player = ApplicationRecord.extend({
     clientAddressableHostname: attr(),
     clockDelta: attr(),
     country: attr(),
+    controlDuringOpenCloseHours: attr(),
     createdAt: attr(),
     createdByName: attr(),
     diskUsageBytes: attr(),
@@ -722,7 +723,6 @@ const DisplayModelVendor = ApplicationRecord.extend({
   attrs: {
     name: attr(),
     displayDrivers: hasMany(),
-    displayModels: hasMany(),
   }
 })
 
