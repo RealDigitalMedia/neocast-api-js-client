@@ -124,6 +124,8 @@ const Player = ApplicationRecord.extend({
     allPresentations: attr({ persist: false }),
 
     activeInterfaceHumanReadable: attr(),
+    activatedAt: attr(),
+    deActivatedAt: attr(),
     addressStreetLine1: attr(),
     addressStreetLine2: attr(),
     callInFrequencyMinutes: attr(),
@@ -175,6 +177,7 @@ const Player = ApplicationRecord.extend({
     inOperatingHours: attr(),
     installedOn: attr(),
     ipAddress: attr(),
+    isActive: attr(),
     lastDeliveredLogPlayertime: attr(),
     lastDownloadedPresentationJsonServertime: attr(),
     lastHeartbeatServertime: attr(),
