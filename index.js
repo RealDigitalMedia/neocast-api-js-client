@@ -42,7 +42,9 @@ const Network = ApplicationRecord.extend({
     players: hasMany(),
 
     name: attr(),
-    presentationOnDemandMedia: attr(),
+    presentationOnDemandMediaId: attr(),
+    presentationOnDemandMediaType: attr(),
+    presentationOnDemandMediaName: attr(),
     createdAt: attr(),
     updatedAt: attr(),
     createdByName: attr(),
@@ -58,7 +60,9 @@ const Location = ApplicationRecord.extend({
     network: belongsTo(),
 
     name: attr(),
-    presentationOnDemandMedia: attr(),
+    presentationOnDemandMediaId: attr(),
+    presentationOnDemandMediaType: attr(),
+    presentationOnDemandMediaName: attr(),
 
     createdAt: attr(),
     updatedAt: attr(),
@@ -222,7 +226,9 @@ const Player = ApplicationRecord.extend({
     phone: attr(),
     playerTime: attr(),
     postalCode: attr(),
-    presentationOnDemandMedia: attr(),
+    presentationOnDemandMediaId: attr(),
+    presentationOnDemandMediaType: attr(),
+    presentationOnDemandMediaName: attr(),
     pusherAccessCode: attr(),
     rebootPending: attr(),
     retrieveLogsFrequencyMinutes: attr(),
