@@ -18,6 +18,16 @@ const ApplicationRecord = SpraypaintBase.extend({
 })
 
 
+const Customer = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'customers',
+  },
+
+  attrs: {
+    name: attr(),
+  }
+})
+
 const DisplayConfiguration = ApplicationRecord.extend({
   static: {
     jsonapiType: 'display_configurations',
