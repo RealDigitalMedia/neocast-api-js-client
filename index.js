@@ -261,12 +261,15 @@ const Player = ApplicationRecord.extend({
     videoOutputMode: attr(),
     watchdogIntervalSeconds: attr(),
 
+    assignedFiles: hasMany(),
+    customField: hasMany(),
+    customFieldValue: hasMany(),
+    customer: belongsTo(),
+    directoryFiles: hasMany(),
+    displayConfiguration: belongsTo(),
     location: belongsTo(),
     network: belongsTo(),
     videoOutputs: hasMany(),
-    displayConfiguration: belongsTo(),
-    directoryFiles: hasMany(),
-    assignedFiles: hasMany(),
   }
 })
 
