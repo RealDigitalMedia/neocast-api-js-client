@@ -25,6 +25,8 @@ const Customer = ApplicationRecord.extend({
 
   attrs: {
     name: attr(),
+
+    customFields: hasMany(),
   }
 })
 
