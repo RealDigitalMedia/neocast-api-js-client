@@ -274,7 +274,6 @@ const Player = ApplicationRecord.extend({
     watchdogIntervalSeconds: attr(),
 
     assignedFiles: hasMany(),
-    customFields: hasMany(),
     customFieldValues: hasMany(),
     customer: belongsTo(),
     directoryFiles: hasMany(),
@@ -723,6 +722,7 @@ const CustomFieldValue = ApplicationRecord.extend({
   },
   attrs: {
     customField: belongsTo(),
+    customFieldId: attr(),
 
     modelId: attr(),
     modelType: attr(),
