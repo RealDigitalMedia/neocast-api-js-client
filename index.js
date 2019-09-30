@@ -274,6 +274,7 @@ const Player = ApplicationRecord.extend({
     watchdogIntervalSeconds: attr(),
 
     assignedFiles: hasMany(),
+    binAssignments: hasMany(),
     customFieldValues: hasMany(),
     customer: belongsTo(),
     directoryFiles: hasMany(),
@@ -365,6 +366,22 @@ const FeedItem = ApplicationRecord.extend({
     createdByName: attr(),
     updatedByName: attr(),
   },
+})
+
+const BinAssignment = ApplicationRecord.extend({
+  static: {
+    jsonApiType: 'bin_assignments',
+  },
+  attrs: {
+    binId: attr(),
+    distributableId: attr(),
+    distributableType: attr(),
+    mediaId: attr(),
+
+    media: belongsTo(),
+    distributable: belongsTo(),
+    bin: belongsTo(),
+  }
 })
 
 const Media = ApplicationRecord.extend({
@@ -849,6 +866,7 @@ module.exports = {
   loginWithJWT,
 
   AssignedFile,
+  BinAssignment,
   CustomField,
   CustomFieldValue,
   Dialect,
