@@ -370,7 +370,7 @@ const FeedItem = ApplicationRecord.extend({
 
 const BinAssignment = ApplicationRecord.extend({
   static: {
-    jsonApiType: 'bin_assignments',
+    jsonapiType: 'bin_assignments',
   },
   attrs: {
     binId: attr(),
