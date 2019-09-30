@@ -378,6 +378,8 @@ const BinAssignment = ApplicationRecord.extend({
     distributableType: attr(),
     mediaId: attr(),
 
+    mediaName: attr(),
+
     media: belongsTo(),
     distributable: belongsTo(),
     bin: belongsTo(),
