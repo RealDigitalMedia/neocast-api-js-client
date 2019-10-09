@@ -285,6 +285,20 @@ const Player = ApplicationRecord.extend({
   }
 })
 
+const PlayerDialectPreference = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'player_dialect_preferences',
+  },
+
+  attrs: {
+    playerId: attr(),
+    dialectId: attr(),
+    position: attr(),
+    player: belongsTo(),
+    dialect: belongsTo(),
+  }
+})
+
 const AssignedFile = ApplicationRecord.extend({
   static: {
     jsonapiType: 'assigned_files',
@@ -890,6 +904,7 @@ module.exports = {
   MediaGroupItem,
   Network,
   Player,
+  PlayerDialectPreference,
   PlayerDistribution,
   PlayerGroup,
   Preference,
