@@ -281,6 +281,7 @@ const Player = ApplicationRecord.extend({
     displayConfiguration: belongsTo(),
     location: belongsTo(),
     network: belongsTo(),
+    playerDialectPreferences: hasMany(),
     videoOutputs: hasMany(),
   }
 })
