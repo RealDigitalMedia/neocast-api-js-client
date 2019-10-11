@@ -18,6 +18,23 @@ const ApplicationRecord = SpraypaintBase.extend({
 })
 
 
+const ContentExclusion = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'content_exclusions',
+  },
+
+  attrs: {
+    mediaId: attr(),
+    customerId: attr(),
+    excluderType: attr(),
+    excluderId: attr(),
+
+    media: belongsTo(),
+    customerId: belongsTo(),
+    excluder: belongsTo(),
+  }
+})
+
 const Customer = ApplicationRecord.extend({
   static: {
     jsonapiType: 'customers',
@@ -275,6 +292,7 @@ const Player = ApplicationRecord.extend({
 
     assignedFiles: hasMany(),
     binAssignments: hasMany(),
+    contentExclusions: hasMany(),
     customFieldValues: hasMany(),
     customer: belongsTo(),
     directoryFiles: hasMany(),
@@ -885,6 +903,7 @@ module.exports = {
 
   AssignedFile,
   BinAssignment,
+  ContentExclusion,
   CustomField,
   CustomFieldValue,
   Dialect,
