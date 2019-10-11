@@ -30,7 +30,7 @@ const ContentExclusion = ApplicationRecord.extend({
     excluderId: attr(),
 
     media: belongsTo(),
-    customerId: belongsTo(),
+    customer: belongsTo(),
     excluder: belongsTo(),
   }
 })
