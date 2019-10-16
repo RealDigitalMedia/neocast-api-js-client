@@ -529,8 +529,9 @@ const TagGroup = ApplicationRecord.extend({
     jsonapiType: 'tag_groups',
   },
   attrs: {
-    name: attr(),
     tags: hasMany(),
+
+    name: attr(),
     createdAt: attr(),
     updatedAt: attr(),
     createdByName: attr(),
@@ -544,6 +545,7 @@ const Tag = ApplicationRecord.extend({
   },
   attrs: {
     tagGroup: belongsTo(),
+    taggings: hasMany(),
 
     name: attr(),
     tagGroupId: attr(),
@@ -560,6 +562,7 @@ const Tagging = ApplicationRecord.extend({
   },
   attrs: {
     tag: belongsTo(),
+
     tagId: attr(),
     taggableId: attr(),
     taggableType: attr(),
