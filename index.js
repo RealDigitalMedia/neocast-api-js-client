@@ -15,6 +15,10 @@ const ApplicationRecord = SpraypaintBase.extend({
     //       is a no-op.
     generateAuthHeader: token => token,
   },
+
+  attrs: {
+    modelClassName: attr(),
+  }
 })
 
 
@@ -157,6 +161,8 @@ const Player = ApplicationRecord.extend({
     jsonapiType: 'players',
   },
   attrs: {
+    type: attr(),
+
     allPresentations: attr({ persist: false }),
 
     activeInterfaceHumanReadable: attr(),
