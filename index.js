@@ -862,9 +862,6 @@ const DisplayModelVendor = ApplicationRecord.extend({
   }
 })
 
-
-
-
 const VideoOutputResolution = ApplicationRecord.extend({
   static: {
     jsonapiType: 'video_output_resolutions',
@@ -879,6 +876,34 @@ const VideoOutputResolution = ApplicationRecord.extend({
     createdAt: attr(),
     updatedAt: attr(),
   },
+})
+
+const User = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'users',
+  },
+  attrs: {
+    login: attr(),
+    email: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
+    name: attr(),
+    customerId: attr(),
+    lastLoginAt: attr(),
+    locale: attr(),
+    resetPasswordSentAt: attr(),
+    signInCount: attr(),
+    currentSignInAt: attr(),
+    lastSignInAt: attr(),
+    currentSignInIp: attr(),
+    lastSignInIp: attr(),
+    failedAttempts: attr(),
+    unlockToken: attr(),
+    lockedAt: attr(),
+    mustChnagePassword: attr(),
+
+    customer: belongsTo(),
+  }
 })
 
 
@@ -944,6 +969,7 @@ module.exports = {
   Tag,
   TagGroup,
   Tagging,
+  User,
   VideoOutput,
   VideoOutputResolution,
 }
