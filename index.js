@@ -141,6 +141,9 @@ const CurrentUser = ApplicationRecord.extend({
     updatedAt: attr(),
     createdByName: attr(),
     updatedByName: attr(),
+
+    isAdmin: attr(),
+    isSuperAdmin: attr(),
   },
 })
 
