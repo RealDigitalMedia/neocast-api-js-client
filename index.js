@@ -905,6 +905,9 @@ const User = ApplicationRecord.extend({
     lockedAt: attr(),
     mustChnagePassword: attr(),
 
+    isAdmin: attr(),
+    isSuperAdmin: attr(),
+
     customer: belongsTo(),
   }
 })
