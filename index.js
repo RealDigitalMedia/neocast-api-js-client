@@ -143,7 +143,7 @@ const CurrentUser = ApplicationRecord.extend({
     updatedByName: attr(),
 
     isAdmin: attr(),
-    isSuperAdmin: attr(),
+    isSuperUser: attr(),
   },
 })
 
@@ -906,7 +906,7 @@ const User = ApplicationRecord.extend({
     mustChnagePassword: attr(),
 
     isAdmin: attr(),
-    isSuperAdmin: attr(),
+    isSuperUser: attr(),
 
     customer: belongsTo(),
   }
