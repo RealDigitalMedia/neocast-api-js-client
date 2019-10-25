@@ -905,7 +905,7 @@ const User = ApplicationRecord.extend({
     failedAttempts: attr(),
     unlockToken: attr(),
     lockedAt: attr(),
-    mustChnagePassword: attr(),
+    mustChangePassword: attr(),
 
     roleNames: attr(),
 
