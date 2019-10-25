@@ -142,6 +142,8 @@ const CurrentUser = ApplicationRecord.extend({
     createdByName: attr(),
     updatedByName: attr(),
 
+    roleNames: attr(),
+
     isAdmin: attr(),
     isSuperUser: attr(),
   },
@@ -904,6 +906,8 @@ const User = ApplicationRecord.extend({
     unlockToken: attr(),
     lockedAt: attr(),
     mustChnagePassword: attr(),
+
+    roleNames: attr(),
 
     isAdmin: attr(),
     isSuperUser: attr(),
