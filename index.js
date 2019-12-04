@@ -21,6 +21,21 @@ const ApplicationRecord = SpraypaintBase.extend({
   }
 })
 
+const GranularPermission = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'granular_permissions',
+  },
+  attrs: {
+    user: belongsTo(),
+    object: belongsTo(),
+
+    userId: attr(),
+    objectId: attr(),
+    objectType: attr(),
+    permission: attr(),
+  }
+})
+
 
 const ContentExclusion = ApplicationRecord.extend({
   static: {
@@ -921,6 +936,7 @@ const User = ApplicationRecord.extend({
     isSuperUser: attr(),
 
     customer: belongsTo(),
+    granularPermissions: hasMany(),
   }
 })
 
