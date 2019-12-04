@@ -985,6 +985,7 @@ module.exports = {
   DuplicateSmartGroup,
   FeedItem,
   Font,
+  GranularPermission,
   GroupCategory,
   Location,
   Media,
