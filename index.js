@@ -27,10 +27,11 @@ const GranularPermission = ApplicationRecord.extend({
   },
   attrs: {
     user: belongsTo(),
+    permissable: belongsTo(),
 
     userId: attr(),
-    objectId: attr(),
-    objectType: attr(),
+    permissableId: attr(),
+    permissableType: attr(),
     permission: attr(),
   }
 })
