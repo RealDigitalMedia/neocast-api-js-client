@@ -18,7 +18,7 @@ const ApplicationRecord = SpraypaintBase.extend({
 
   attrs: {
     modelClassName: attr(),
-  }
+  },
 })
 
 const GranularPermission = ApplicationRecord.extend({
@@ -34,9 +34,8 @@ const GranularPermission = ApplicationRecord.extend({
     permissableId: attr(),
     permissableType: attr(),
     permission: attr(),
-  }
+  },
 })
-
 
 const ContentExclusion = ApplicationRecord.extend({
   static: {
@@ -52,7 +51,7 @@ const ContentExclusion = ApplicationRecord.extend({
     media: belongsTo(),
     customer: belongsTo(),
     excluder: belongsTo(),
-  }
+  },
 })
 
 const Customer = ApplicationRecord.extend({
@@ -64,7 +63,7 @@ const Customer = ApplicationRecord.extend({
     name: attr(),
 
     customFields: hasMany(),
-  }
+  },
 })
 
 const DisplayConfiguration = ApplicationRecord.extend({
@@ -79,7 +78,7 @@ const DisplayConfiguration = ApplicationRecord.extend({
     screenArrayX: attr(),
     screenArrayY: attr(),
     orientation: attr(),
-  }
+  },
 })
 
 const Network = ApplicationRecord.extend({
@@ -134,7 +133,6 @@ const PlayerDistribution = ApplicationRecord.extend({
     playerCount: attr(),
   },
 })
-
 
 const CurrentUser = ApplicationRecord.extend({
   static: {
@@ -331,7 +329,7 @@ const Player = ApplicationRecord.extend({
     network: belongsTo(),
     playerDialectPreferences: hasMany(),
     videoOutputs: hasMany(),
-  }
+  },
 })
 
 const PlayerDialectPreference = ApplicationRecord.extend({
@@ -345,7 +343,7 @@ const PlayerDialectPreference = ApplicationRecord.extend({
     position: attr(),
     player: belongsTo(),
     dialect: belongsTo(),
-  }
+  },
 })
 
 const AssignedFile = ApplicationRecord.extend({
@@ -370,7 +368,7 @@ const AssignedFile = ApplicationRecord.extend({
     category: attr(),
     explicitUrl: attr(),
     failedDownloadAttempts: attr(),
-  }
+  },
 })
 
 const DirectoryFile = ApplicationRecord.extend({
@@ -385,7 +383,7 @@ const DirectoryFile = ApplicationRecord.extend({
     md5Sum: attr(),
     lastAssignedDate: attr(),
     raw: attr(),
-  }
+  },
 })
 
 const SpotSwapItem = ApplicationRecord.extend({
@@ -447,7 +445,7 @@ const BinAssignment = ApplicationRecord.extend({
     media: belongsTo(),
     distributable: belongsTo(),
     bin: belongsTo(),
-  }
+  },
 })
 
 const Media = ApplicationRecord.extend({
@@ -596,7 +594,7 @@ const Tagging = ApplicationRecord.extend({
     tagId: attr(),
     taggableId: attr(),
     taggableType: attr(),
-  }
+  },
 })
 
 const DuplicateSmartGroup = ApplicationRecord.extend({
@@ -607,9 +605,8 @@ const DuplicateSmartGroup = ApplicationRecord.extend({
   attrs: {
     smartGroup: belongsTo(),
     smartGroupId: attr(),
-  }
+  },
 })
-
 
 const SmartGroup = ApplicationRecord.extend({
   static: {
@@ -671,7 +668,7 @@ const DuplicateMediaGroup = ApplicationRecord.extend({
   attrs: {
     mediaGroup: belongsTo(),
     mediaGroupId: attr(),
-  }
+  },
 })
 
 const MediaGroup = ApplicationRecord.extend({
@@ -722,7 +719,6 @@ const MediaGroupItem = ApplicationRecord.extend({
     position: attr(),
   },
 })
-
 
 const PlayerGroup = ApplicationRecord.extend({
   static: {
@@ -846,7 +842,7 @@ const DisplayModel = ApplicationRecord.extend({
     displayDriver: belongsTo(),
     displayModelVendor: belongsTo(),
     displayModelSources: hasMany(),
-  }
+  },
 })
 
 const DisplayModelSource = ApplicationRecord.extend({
@@ -857,10 +853,9 @@ const DisplayModelSource = ApplicationRecord.extend({
     name: attr(),
     modelSpecificValue: attr(),
     displayDriver: belongsTo(),
-    displayModel: belongsTo()
-  }
+    displayModel: belongsTo(),
+  },
 })
-
 
 const DisplayDriver = ApplicationRecord.extend({
   static: {
@@ -873,7 +868,7 @@ const DisplayDriver = ApplicationRecord.extend({
     displayModelVendor: belongsTo(),
     displayModelSources: hasMany(),
     displayModels: hasMany(),
-  }
+  },
 })
 
 const DisplayModelVendor = ApplicationRecord.extend({
@@ -883,7 +878,7 @@ const DisplayModelVendor = ApplicationRecord.extend({
   attrs: {
     name: attr(),
     displayDrivers: hasMany(),
-  }
+  },
 })
 
 const VideoOutputResolution = ApplicationRecord.extend({
@@ -936,11 +931,17 @@ const User = ApplicationRecord.extend({
     isAdmin: attr(),
     isSuperUser: attr(),
 
+    gupViewPlayers: attr(),
+    gupUpdatePlayers: attr(),
+    gupDeletePlayers: attr(),
+    gupViewMedia: attr(),
+    gupUpdateMedia: attr(),
+    gupDeleteMedia: attr(),
+
     customer: belongsTo(),
     granularPermissions: hasMany(),
-  }
+  },
 })
-
 
 const loginWithJWT = async (url, username, password) => {
   ApplicationRecord.baseUrl = url
