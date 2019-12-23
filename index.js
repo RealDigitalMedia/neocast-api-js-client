@@ -897,6 +897,24 @@ const VideoOutputResolution = ApplicationRecord.extend({
   },
 })
 
+const Presentation = ApplicationRecord.extend({
+  static: {
+    jsonapiType: 'presentations',
+  },
+  attrs: {
+    name: attr(),
+    createdAt: attr(),
+    updatedAt: attr(),
+    isLaunched: attr(),
+    startDate: attr(),
+    endDate: attr(),
+    showInDirector: attr(),
+
+    displayConfiguration: belongsTo(),
+    playerDistribution: belongsTo(),
+  }
+})
+
 const User = ApplicationRecord.extend({
   static: {
     jsonapiType: 'users',
@@ -999,6 +1017,7 @@ module.exports = {
   PlayerDistribution,
   PlayerGroup,
   Preference,
+  Presentation,
   SmartGroup,
   SmartGroupCondition,
   SpotSwapItem,
