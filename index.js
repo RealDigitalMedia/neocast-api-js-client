@@ -947,7 +947,7 @@ const User = ApplicationRecord.extend({
     roleNames: attr(),
 
     isAdmin: attr(),
-    isSuperUser: attr(),
+    isSuperAdmin: attr(),
 
     gupViewPlayers: attr(),
     gupUpdatePlayers: attr(),
