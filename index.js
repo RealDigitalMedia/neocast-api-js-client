@@ -162,7 +162,7 @@ const CurrentUser = ApplicationRecord.extend({
     passwordConfirmation: attr(),
 
     isAdmin: attr(),
-    isSuperUser: attr(),
+    isSuperAdmin: attr(),
   },
 })
 
