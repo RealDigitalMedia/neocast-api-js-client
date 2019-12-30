@@ -909,6 +909,7 @@ const Presentation = ApplicationRecord.extend({
     startDate: attr(),
     endDate: attr(),
     showInDirector: attr(),
+    timeblockText: attr(),
 
     displayConfiguration: belongsTo(),
     playerDistribution: belongsTo(),
