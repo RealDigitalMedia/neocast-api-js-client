@@ -90,6 +90,7 @@ const Network = ApplicationRecord.extend({
     players: hasMany(),
 
     name: attr(),
+    description: attr(),
     presentationOnDemandMediaId: attr(),
     presentationOnDemandMediaType: attr(),
     presentationOnDemandMediaName: attr(),
