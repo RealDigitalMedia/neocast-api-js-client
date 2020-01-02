@@ -88,6 +88,7 @@ const Network = ApplicationRecord.extend({
   attrs: {
     locations: hasMany(),
     players: hasMany(),
+    binAssignments: hasMany(),
 
     name: attr(),
     description: attr(),
